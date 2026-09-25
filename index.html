@@ -223,7 +223,7 @@
       <button class="nav-item emergency" onclick="goTo('emergency')"><span class="ic">🚨</span>지금 응급 증상인가요?</button>
       <button class="nav-item" onclick="goTo('transport')"><span class="ic">🚗</span>이동수단</button>
       <button class="nav-item" onclick="goTo('benefits')"><span class="ic">💰</span>지원제도</button>
-      <button class="nav-item" onclick="goTo('ltc')"><span class="ic">🏠</span>재가요양센터</button>
+      <button class="nav-item" onclick="goTo('ltc')"><span class="ic">🏠</span>돌봄센터</button>
       <button class="nav-item" onclick="goTo('equipment')"><span class="ic">🛏️</span>장비 준비</button>
       <button class="nav-item" onclick="goTo('rehab')"><span class="ic">🩺</span>재활자원</button>
       <button class="nav-item" onclick="goTo('checklist')"><span class="ic">✅</span>집 점검</button>
@@ -309,6 +309,27 @@
     </details>
 
     <details class="card">
+      <summary><b>가족요양비</b> — 직접 돌봐도 현금 지원<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>장기요양 등급자를 시설·재가서비스 이용이 어려운 특별한 사유(치매 이상행동 등)로 가족이 직접 돌보는 경우</p>
+        <p><span class="label">혜택</span>요양보호사 자격이 없어도 월 240,450원(2026년 기준) 현금 지급</p>
+        <p><span class="label">신청</span>국민건강보험공단에 문의 — 담당자 방문조사 후 결정</p>
+        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>재난적의료비 지원</b> — 병원비 절반 돌려받기<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>낸 의료비가 가구 연소득의 10%를 넘는 경우 (기준중위소득 100% 이하 원칙, 개별심사 시 200%까지 확대)</p>
+        <p><span class="label">혜택</span>본인부담 의료비의 50%를 연간 2천만원(개별심사 시 최대 3천만원)까지 지원</p>
+        <p><span class="label">신청</span>퇴원 후 180일 이내 국민건강보험공단 지사 방문 (부득이한 경우 우편·팩스)</p>
+        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <div class="tip">💡 입원비가 많이 나왔다면 본인부담상한제와 같이 꼭 확인해보세요. 둘 다 모르고 못 받는 분이 많습니다.</div>
+      </div>
+    </details>
+
+    <details class="card">
       <summary><b>장애인 활동지원서비스</b> — 돌봄 인력 지원<span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>만 6~64세 등록장애인 (소득과 무관하게 신청 가능)</p>
@@ -374,8 +395,8 @@
       </div>
     </details>
 
-    <div class="section-title" id="ltc"><span class="n">③</span>우리 동네 재가요양센터 찾기</div>
-    <div class="section-sub">장기요양 등급을 받으면 계약해서 방문요양·방문목욕 서비스를 받을 수 있습니다</div>
+    <div class="section-title" id="ltc"><span class="n">③</span>재가요양센터·주간보호센터 찾기</div>
+    <div class="section-sub">장기요양 등급을 받으면 계약해서 방문요양·방문목욕·주간보호 서비스를 받을 수 있습니다</div>
 
     <details class="card" open>
       <summary>재가요양센터, 어떻게 찾나요?<span class="arrow">›</span></summary>
@@ -385,6 +406,17 @@
         <a class="tel-btn map" href="https://map.kakao.com/?q=양산시 재가요양센터">🗺️ 카카오맵에서 찾기</a>
         <a class="tel-btn secondary" href="https://www.longtermcare.or.kr/">📋 국민건강보험공단 공식 기관 찾기 (평가등급 확인)</a>
         <div class="tip">💡 공식 사이트 접속 후 "검색서비스 → 장기요양기관 찾기"에서 지역을 양산시로, 급여종류를 방문요양으로 선택하면 평가등급까지 확인할 수 있습니다.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>낮 동안만 맡기고 싶다면 <b>주간보호센터(데이케어)</b><span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>하루 8~10시간 시설에서 인지·신체활동 프로그램, 식사, 투약 관리를 받을 수 있습니다. 보호자가 낮 시간 동안 쉬거나 일할 수 있어 많이 이용합니다.</p>
+        <p><span class="label">이용</span>장기요양 재가급여 한도 내에서 이용 (본인부담 발생)</p>
+        <a class="tel-btn map" href="https://map.naver.com/p/search/양산시 주간보호센터">🗺️ 네이버지도에서 찾기</a>
+        <a class="tel-btn map" href="https://map.kakao.com/?q=양산시 주간보호센터">🗺️ 카카오맵에서 찾기</a>
+        <div class="tip">💡 매일 돌봐야 하는 부담이 크다면, 재가요양센터(방문형)보다 주간보호센터(시설형)가 보호자 휴식에 더 도움이 될 수 있습니다.</div>
       </div>
     </details>
 
@@ -447,12 +479,22 @@
   </div>
 
 <script>
+  function openAndScroll(el, smooth) {
+    if (el.tagName === 'DETAILS') { el.open = true; }
+    el.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+  }
   function goTo(id) {
     var el = document.getElementById(id);
     if (!el) return;
-    if (el.tagName === 'DETAILS') { el.open = true; }
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (history.pushState) { history.pushState(null, '', '#' + id); } else { location.hash = id; }
+    openAndScroll(el, true);
   }
+  window.addEventListener('DOMContentLoaded', function () {
+    if (location.hash) {
+      var el = document.getElementById(location.hash.substring(1));
+      if (el) setTimeout(function () { openAndScroll(el, false); }, 50);
+    }
+  });
   function setFs(size) {
     document.body.setAttribute('data-fs', size);
     document.querySelectorAll('.fs-btn').forEach(b => b.classList.remove('active'));
