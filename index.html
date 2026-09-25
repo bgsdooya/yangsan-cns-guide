@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#1a6eb5">
+<title>양산시 귀가지원 안내</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --primary: #1a6eb5;
+    --primary-light: #2e86d4;
+    --primary-dark: #0f4f8a;
+    --accent: #e8941a;
+    --bg: #f0f5fb;
+    --white: #ffffff;
+    --gray-100: #f8fafc;
+    --gray-200: #e9eef5;
+    --gray-300: #d1dce8;
+    --gray-700: #3d5a73;
+    --text: #1e3448;
+    --radius: 16px;
+    --shadow: 0 4px 20px rgba(26,110,181,0.12);
+    --fs-base: 18px;
+  }
+  [data-fs="large"] { --fs-base: 21px; }
+  [data-fs="small"] { --fs-base: 16px; }
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+  html { font-size: var(--fs-base); }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding-bottom: 40px;
+  }
+
+  .app-header {
+    background: var(--white);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(26,110,181,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .app-header .brand { display:flex; align-items:center; gap:8px; font-weight:800; color:var(--primary-dark); font-size:1.02rem; }
+  .app-header .brand .dot { width:10px; height:10px; border-radius:50%; background:var(--accent); flex-shrink:0; }
+
+  .fs-toggle { display:flex; gap:6px; }
+  .fs-btn {
+    min-height:44px; min-width:44px;
+    border:2px solid var(--gray-300);
+    background:var(--white);
+    border-radius:10px;
+    font-weight:700;
+    color:var(--gray-700);
+  }
+  .fs-btn.active { border-color:var(--primary); color:var(--primary); background:#eaf3fb; }
+
+  .content { max-width: 560px; margin: 0 auto; padding: 20px 16px; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 60%, #3a9de8 100%);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .hero h1 { font-size: 1.35rem; font-weight:800; margin-bottom:8px; line-height:1.4; }
+  .hero p { font-size: 0.95rem; opacity:0.92; }
+
+  .disclaimer {
+    background:#fff8e6;
+    border:2px solid #f0c869;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+    color:#7a5a10;
+  }
+  .disclaimer b { display:block; margin-bottom:4px; color:#8a4b00; }
+
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 28px 0 12px;
+    border-left: 6px solid var(--accent);
+    padding-left: 10px;
+  }
+  .section-title .n { color:var(--accent); margin-right:6px; }
+  .section-sub { font-size:0.88rem; color:var(--gray-700); margin: -6px 0 12px 16px; }
+
+  details.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  details.card > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    font-weight:700;
+    font-size: 1rem;
+    color: var(--text);
+  }
+  details.card > summary::-webkit-details-marker { display:none; }
+  details.card > summary .arrow { transition: transform .2s; color:var(--primary); font-size:1.2rem; flex-shrink:0; }
+  details.card[open] > summary .arrow { transform: rotate(90deg); }
+  .card-body { padding: 0 18px 18px; font-size: 0.95rem; color: var(--gray-700); }
+  .card-body p { margin-bottom: 10px; }
+  .card-body ul { margin: 0 0 10px 18px; }
+  .card-body li { margin-bottom: 4px; }
+  .card-body .label { display:inline-block; background:var(--gray-200); color:var(--primary-dark); font-weight:700; font-size:0.82rem; padding:2px 8px; border-radius:8px; margin-right:6px; }
+
+  .tel-btn {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    min-height:48px;
+    background: var(--primary);
+    color: white;
+    text-decoration:none;
+    border-radius: 12px;
+    font-weight:700;
+    font-size: 1rem;
+    margin-top: 8px;
+  }
+  .tel-btn.secondary { background: var(--accent); }
+  .tel-btn.map { background: #2ecc71; }
+  .tel-btn:active { opacity:0.85; }
+
+  .tip {
+    background:#eaf7ee;
+    border-left:4px solid #2ecc71;
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:0.9rem;
+    margin-top:10px;
+  }
+  .warn {
+    background:#fdecea;
+    border-left:4px solid #e74c3c;
+    padding:10px 12px;
+    border-radius:8px;
+    font-size:0.9rem;
+    margin-top:10px;
+  }
+
+  table.compare { width:100%; border-collapse:collapse; margin-top:6px; font-size:0.88rem; }
+  table.compare th, table.compare td { border:1px solid var(--gray-300); padding:8px 6px; text-align:left; }
+  table.compare th { background:var(--gray-100); color:var(--primary-dark); }
+
+  .footer-note {
+    text-align:center;
+    font-size:0.82rem;
+    color: var(--gray-700);
+    margin-top: 30px;
+    line-height:1.8;
+  }
+</style>
+</head>
+<body data-fs="normal">
+  <div class="app-header">
+    <div class="brand"><span class="dot"></span>양산시 귀가지원 안내</div>
+    <div class="fs-toggle">
+      <button class="fs-btn" id="fs-small" onclick="setFs('small')" style="font-size:13px;">가-</button>
+      <button class="fs-btn active" id="fs-normal" onclick="setFs('normal')" style="font-size:15px;">가</button>
+      <button class="fs-btn" id="fs-large" onclick="setFs('large')" style="font-size:18px;">가+</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="hero">
+      <h1>퇴원하고 집에 가면<br>무엇부터 챙겨야 할까요?</h1>
+      <p>뇌졸중 등으로 몸이 불편해지신 분들이 집으로 돌아갈 때 실제로 도움이 되는 이동수단, 지원제도, 장비 구하는 곳, 지역 자원을 한곳에 모았습니다.</p>
+    </div>
+
+    <div class="disclaimer">
+      <b>안내 말씀</b>
+      이 페이지는 환자·보호자분들의 이해를 돕기 위해 정리한 시민 정보 자료이며, 양산시·건강보험공단 등의 공식 서비스가 아닙니다. 제도 내용·연락처·금액 기준은 바뀔 수 있으니, 신청 전 반드시 해당 기관에 전화로 다시 확인해 주세요. (2026년 9월 기준)
+    </div>
+
+    <div class="section-title"><span class="n">①</span>이동수단 — 콜택시·바우처택시</div>
+
+    <details class="card" open>
+      <summary>휠체어를 타신다면 <b>교통약자 콜택시</b><span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>휠체어를 이용하시는 장애인 등 교통약자</p>
+        <p><span class="label">운영</span>24시간 이용 가능</p>
+        <p><span class="label">요금</span>양산시 관내 1회 2,000원</p>
+        <p><span class="label">신청</span>전화로 미리 예약하시면 차량이 집 앞까지 옵니다.</p>
+        <a class="tel-btn" href="tel:055-381-9663">📞 양산시교통약자이동지원센터 055-381-9663</a>
+        <a class="tel-btn secondary" href="tel:1566-4488">📞 경남광역이동지원센터 1566-4488</a>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>걷기는 하시지만 힘드시다면 <b>바우처택시</b><span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>휠체어는 아니지만 보행이 어려운 교통약자 (양산시 거주)</p>
+        <p><span class="label">운영</span>오전 6시 ~ 오후 10시</p>
+        <p><span class="label">요금</span>1회 2,000원 수준 (일반택시 요금 일부 지원 방식)</p>
+        <a class="tel-btn" href="tel:055-381-9663">📞 신청·문의 055-381-9663</a>
+        <div class="tip">💡 병원 진료·재활치료 갈 때도 이용하실 수 있습니다. 예약은 하루 전에 하시는 게 안전합니다.</div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">②</span>몰라서 못 받는 지원제도</div>
+    <div class="section-sub">치료진도 다 알지 못하는 제도가 많습니다. 하나씩 눌러서 확인해보세요.</div>
+
+    <details class="card">
+      <summary><b>장애인 등록</b> — 모든 지원의 출발점<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>뇌졸중 등으로 마비·기능장애가 남아 있는 경우 (증상이 고정된 후, 보통 발병 6개월~1년 이후 주치의 판단)</p>
+        <p><span class="label">신청</span>주소지 읍·면·동 주민센터 방문 (정부24 온라인 신청도 가능)</p>
+        <p><span class="label">서류</span>병원에서 발급받는 장애정도 심사용 진단서, 검사자료</p>
+        <div class="tip">💡 장애인 등록이 되어야 아래 활동지원·전기요금 할인·자동차 세금감면 등 대부분의 지원을 받을 수 있습니다. 담당 치료사·주치의에게 진단서 발급을 먼저 문의하세요.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>노인장기요양보험</b> — 65세 미만도 가능<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>65세 미만이어도 뇌졸중(뇌혈관질환) 등으로 6개월 이상 혼자 일상생활이 어려우면 신청 가능</p>
+        <p><span class="label">받을 수 있는 것</span>방문요양·방문목욕, 복지용구(휠체어·침대 등) 대여·구입 지원, 요양시설 이용</p>
+        <p><span class="label">신청</span>65세 미만은 인터넷 최초신청 불가 — 공단 지사 방문·우편·팩스로 신청 (진단서 첨부)</p>
+        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <div class="tip">💡 등급을 받으면 ③ 재가요양센터 찾기, ④ 장비 준비하기 섹션에서 바로 활용하실 수 있습니다.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>장애인 활동지원서비스</b> — 돌봄 인력 지원<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>만 6~64세 등록장애인 (소득과 무관하게 신청 가능)</p>
+        <p><span class="label">받을 수 있는 것</span>활동지원사가 집에 방문해 식사·이동·외출을 도와줌</p>
+        <p><span class="label">신청</span>읍·면·동 주민센터 접수 → 국민연금공단 방문조사 → 등급 결정</p>
+        <a class="tel-btn" href="tel:1355">📞 국민연금공단 1355</a>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>산정특례</b> — 병원비 본인부담 5%로<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>뇌졸중(뇌혈관질환)으로 입원·수술을 받는 경우</p>
+        <p><span class="label">혜택</span>입원일(또는 수술·시술일)로부터 최대 30일간 진료비 본인부담률이 5%로 낮아짐</p>
+        <p><span class="label">신청</span>따로 신청할 필요 없이 병원에서 청구할 때 자동 적용되는 경우가 많습니다. 입원 중 담당 원무과·사회복지팀에 "산정특례 적용됐는지" 확인해 보세요.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>본인부담상한제</b> — 낸 병원비 돌려받기<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">내용</span>1년간 낸 건강보험 본인부담금이 소득분위별 상한액을 넘으면, 넘은 금액을 공단이 돌려줍니다</p>
+        <p><span class="label">신청</span>공단이 대상자에게 환급 안내문을 보내줍니다. 안내문 받은 날로부터 3년 이내 신청하면 됩니다</p>
+        <p><span class="label">확인 방법</span>국민건강보험공단 홈페이지·The건강보험 앱에서 조회 가능</p>
+        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <div class="tip">💡 장기간 입원·재활치료를 받으셨다면 꼭 확인해보세요. 모르고 안 받는 분이 많습니다.</div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>전기요금 할인</b> — 중증장애인 월 최대 2만원<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>장애 정도가 심한(중증) 등록장애인</p>
+        <p><span class="label">혜택</span>월 최대 16,000원 할인 (여름철 7~8월은 최대 20,000원)</p>
+        <p><span class="label">신청</span>한전ON(온라인), 주민센터, 한전 고객센터 국번없이 123</p>
+        <p><span class="label">서류</span>장애인등록증(복지카드), 최근 전기요금 영수증</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>자동차 세금 감면</b> — 취득세·자동차세 면제<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>장애 정도가 심한(1~3급 수준) 등록장애인 명의 차량 (배우자·직계존비속 공동명의 포함), 배기량 2천cc 이하 승용차 등 1대</p>
+        <p><span class="label">혜택</span>취득세·자동차세 면제, LPG 차량 사용 가능</p>
+        <p><span class="label">신청</span>시·군·구청(차량등록 담당)에 장애인등록증·자동차등록증 지참하여 신청</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>주택 개조 지원</b> — 손잡이·경사로·화장실 개조비<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">대상</span>저소득(기준 중위소득 이하) 등록장애인 가구</p>
+        <p><span class="label">혜택</span>가구당 최대 약 380만원까지 안전손잡이·경사로 설치, 화장실 개조, 출입문 문턱 제거 등 지원 (지자체·연도별로 한도가 달라질 수 있음)</p>
+        <p><span class="label">신청</span>양산시청 노인장애인과에 대상 여부 문의</p>
+        <a class="tel-btn" href="tel:055-392-2522">📞 양산시청 노인장애인과 055-392-2522</a>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><b>통신비 할인</b> — 이동전화 요금 감면<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>등록장애인은 이동통신 3사(SKT·KT·LGU+) 대리점이나 고객센터를 통해 요금 감면을 신청할 수 있습니다. 감면율과 조건은 통신사·요금제마다 다르니 다니시는 통신사 대리점에 장애인등록증을 가지고 문의하세요.</p>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">③</span>우리 동네 재가요양센터 찾기</div>
+    <div class="section-sub">장기요양 등급을 받으면 계약해서 방문요양·방문목욕 서비스를 받을 수 있습니다</div>
+
+    <details class="card" open>
+      <summary>재가요양센터, 어떻게 찾나요?<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>집에서 가깝고 평가등급이 좋은 곳을 고르는 게 좋습니다. 계약 전에 장기요양인정서·표준장기요양이용계획서를 준비해 두세요.</p>
+        <a class="tel-btn map" href="https://map.naver.com/p/search/양산시 재가요양센터">🗺️ 네이버지도에서 찾기</a>
+        <a class="tel-btn map" href="https://map.kakao.com/?q=양산시 재가요양센터">🗺️ 카카오맵에서 찾기</a>
+        <a class="tel-btn secondary" href="https://www.longtermcare.or.kr/">📋 국민건강보험공단 공식 기관 찾기 (평가등급 확인)</a>
+        <div class="tip">💡 공식 사이트 접속 후 "검색서비스 → 장기요양기관 찾기"에서 지역을 양산시로, 급여종류를 방문요양으로 선택하면 평가등급까지 확인할 수 있습니다.</div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">④</span>퇴원 전 꼭 필요한 장비 준비하기</div>
+    <div class="section-sub">손잡이, 환자용 침대, 보행보조기구 — 어디서 구하나요?</div>
+
+    <details class="card" open>
+      <summary>장기요양 등급이 있다면 <b>복지용구 급여</b>로<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">한도</span>연간 160만원까지 (공단부담금+본인부담금 합산), 본인부담은 일반 15% / 감경대상 6~9% / 기초수급자 0%</p>
+        <table class="compare">
+          <tr><th>대여 품목 (빌려서 사용)</th><th>구입 품목 (사서 사용)</th></tr>
+          <tr><td>전동·수동 침대<br>수동휠체어<br>욕창예방매트리스<br>이동욕조</td><td><b>안전손잡이</b><br><b>성인용 보행기</b><br>지팡이<br>미끄럼방지매트<br>이동변기·목욕의자</td></tr>
+        </table>
+        <p style="margin-top:10px;"><span class="label">신청</span>가까운 "복지용구사업소"에 장기요양 급여확인서를 가지고 방문·계약하면 본인부담금만 내고 이용 가능합니다.</p>
+        <a class="tel-btn map" href="https://map.naver.com/p/search/양산시 복지용구사업소">🗺️ 네이버지도에서 복지용구사업소 찾기</a>
+        <a class="tel-btn map" href="https://map.kakao.com/?q=양산시 복지용구사업소">🗺️ 카카오맵에서 찾기</a>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary>장기요양 등급이 없다면?<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>등급이 없으면 원칙적으로 전액 본인부담으로 의료기기상사·복지용구 판매점에서 구입하거나 렌탈업체에서 대여해야 합니다.</p>
+        <div class="warn">⚠️ 퇴원이 급한데 아직 등급 판정이 안 나왔다면, 담당 치료사와 상의해 임시로 대여만 먼저 해두고 등급이 나온 뒤 급여로 전환하는 방법도 있습니다.</div>
+        <a class="tel-btn map" href="https://map.naver.com/p/search/양산시 의료기기 대여">🗺️ 네이버지도에서 의료기기 대여점 찾기</a>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">⑤</span>가까운 재활 자원</div>
+
+    <details class="card">
+      <summary>양산시보건소 <b>지역사회 재활·방문건강관리</b><span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p><span class="label">위치</span>경남 양산시 삽량로 169 (중부동)</p>
+        <p><span class="label">내용</span>방문건강관리, 지역사회중심재활사업 등 — 대상·절차는 보건소에 문의</p>
+        <a class="tel-btn" href="tel:055-392-5102">📞 양산시보건소 055-392-5102</a>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">⑥</span>퇴원 전 집 점검 체크리스트</div>
+
+    <details class="card">
+      <summary>낙상 없는 집 만들기<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>☐ 방·화장실 문턱 없애거나 경사로 설치</p>
+        <p>☐ 화장실·욕실에 안전손잡이 설치</p>
+        <p>☐ 욕실 바닥 미끄럼 방지 매트</p>
+        <p>☐ 자주 다니는 길목에 물건 치우기</p>
+        <p>☐ 침대 높이 낮추고 야간등 설치</p>
+        <p>☐ 자주 쓰는 물건은 손 닿는 높이에 배치</p>
+        <div class="tip">💡 ④ 장비 준비하기의 안전손잡이·경사로는 대부분 복지용구 급여로 구입 가능하고, ② 주택 개조 지원으로 설치비도 지원받을 수 있습니다.</div>
+      </div>
+    </details>
+
+    <div class="section-title"><span class="n">⑦</span>응급·상담 연락처</div>
+
+    <details class="card">
+      <summary>어디로 전화해야 할지 모를 때<span class="arrow">›</span></summary>
+      <div class="card-body">
+        <a class="tel-btn" href="tel:119">📞 응급상황 119</a>
+        <a class="tel-btn secondary" href="tel:129">📞 보건복지 상담센터 129 (모든 복지제도 안내)</a>
+        <a class="tel-btn secondary" href="tel:055-392-5102">📞 양산시보건소 055-392-5102</a>
+        <a class="tel-btn secondary" href="tel:055-392-2114">📞 양산시청 대표전화 055-392-2114</a>
+      </div>
+    </details>
+
+    <div class="footer-note">
+      환자·보호자를 위해 정리한 시민 정보 자료입니다.<br>
+      내용은 2026년 9월 기준이며 실제 지원 여부·금액은 해당 기관에서 다시 확인해 주세요.
+    </div>
+  </div>
+
+<script>
+  function setFs(size) {
+    document.body.setAttribute('data-fs', size);
+    document.querySelectorAll('.fs-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('fs-' + size).classList.add('active');
+    try { localStorage.setItem('cns-guide-fs', size); } catch(e) {}
+  }
+  try {
+    var saved = localStorage.getItem('cns-guide-fs');
+    if (saved) setFs(saved);
+  } catch(e) {}
+</script>
+</body>
+</html>
