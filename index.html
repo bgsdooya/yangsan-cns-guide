@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-fs="normal">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -32,8 +32,8 @@
     --shadow: 0 6px 24px rgba(140,50,22,0.14);
     --fs-base: 18px;
   }
-  [data-fs="large"] { --fs-base: 21px; }
-  [data-fs="small"] { --fs-base: 16px; }
+  html[data-fs="large"] { --fs-base: 21px; }
+  html[data-fs="small"] { --fs-base: 16px; }
 
   * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
@@ -245,7 +245,7 @@
   }
 </style>
 </head>
-<body data-fs="normal">
+<body>
   <div class="app-header">
     <div class="brand"><span class="dot"></span>양산 재활귀가 디딤돌</div>
     <div class="fs-toggle">
@@ -257,8 +257,8 @@
 
   <div class="content">
     <div class="hero">
-      <h1>퇴원하고 집에 가면<br>무엇부터 챙겨야 할까요?</h1>
-      <p>뇌졸중 등으로 몸이 불편해지신 분들이 집으로 돌아갈 때 실제로 도움이 되는 이동수단, 지원제도, 장비 구하는 곳, 지역 자원을 한곳에 모았습니다.</p>
+      <h1>갑작스러운 병으로 몸도 마음도<br>힘드신 분들의 디딤돌이 되어드립니다.</h1>
+      <p>뇌졸중, 파킨슨병 등 신경계 질환으로 몸이 불편해지신 분들이 집으로 돌아갈 때 실제로 도움이 되는 이동수단, 지원제도, 장비 구하는 곳, 지역 자원을 한곳에 모았습니다.</p>
     </div>
 
     <div class="quick-nav">
@@ -538,7 +538,7 @@
     }
   });
   function setFs(size) {
-    document.body.setAttribute('data-fs', size);
+    document.documentElement.setAttribute('data-fs', size);
     document.querySelectorAll('.fs-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('fs-' + size).classList.add('active');
     try { localStorage.setItem('cns-guide-fs', size); } catch(e) {}
