@@ -119,6 +119,16 @@
   .section-title .n { color:#ffe9c9; }
   .section-sub { font-size:0.88rem; color:var(--gray-700); margin: 4px 0 14px 6px; }
 
+  .path-fork { background:var(--white); border-radius:var(--radius); padding:16px; margin-bottom:16px; box-shadow:var(--shadow); text-align:center; }
+  .path-fork p { font-weight:800; font-size:1rem; color:var(--text); margin-bottom:10px; }
+  .path-fork-btns { display:flex; gap:10px; }
+  .path-btn {
+    flex:1; min-height:54px; border:2px solid var(--gray-200); border-radius:14px;
+    background:var(--gray-100); font-weight:700; font-size:0.9rem; color:var(--text);
+    font-family:inherit; line-height:1.35; padding:6px 8px;
+  }
+  .path-btn.selected { border-color:var(--primary); background:#fdece0; color:var(--primary-dark); }
+
   .quick-nav { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; margin-bottom:18px; }
   .nav-item {
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
@@ -270,6 +280,14 @@
     <div class="hero">
       <h1>갑작스러운 병으로 몸도 마음도<br>힘드신 분들의 디딤돌이 되어드립니다.</h1>
       <p>뇌졸중, 파킨슨병 등 신경계 질환으로 몸이 불편해지신 분들이 집으로 돌아갈 때 실제로 도움이 되는 이동수단, 지원제도, 장비 구하는 곳, 지역 자원을 한곳에 모았습니다.</p>
+    </div>
+
+    <div class="path-fork">
+      <p>퇴원 후 어디로 가세요?</p>
+      <div class="path-fork-btns">
+        <button class="path-btn selected" id="path-home" onclick="choosePath('home')">🏠 집으로</button>
+        <button class="path-btn" id="path-transfer" onclick="choosePath('transfer')">🏥 요양병원·재활병원으로</button>
+      </div>
     </div>
 
     <div class="quick-nav">
@@ -446,9 +464,9 @@
       <summary><span class="summary-title">재가요양센터, 어떻게 찾나요?<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>집에서 가깝고 평가등급이 좋은 곳을 고르는 게 좋습니다. 계약 전에 장기요양인정서·표준장기요양이용계획서를 준비해 두세요.</p>
-        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 재가요양센터"><span class="maplogo">N</span>네이버지도에서 찾기</a>
-        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 재가요양센터"><span class="maplogo">K</span>카카오맵에서 찾기</a>
-        <a class="tel-btn secondary" href="https://www.longtermcare.or.kr/">📋 국민건강보험공단 공식 기관 찾기 (평가등급 확인)</a>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 재가요양센터" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 찾기</a>
+        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 재가요양센터" target="_blank" rel="noopener"><span class="maplogo">K</span>카카오맵에서 찾기</a>
+        <a class="tel-btn secondary" href="https://www.longtermcare.or.kr/" target="_blank" rel="noopener">📋 국민건강보험공단 공식 기관 찾기 (평가등급 확인)</a>
         <div class="tip">💡 공식 사이트 접속 후 "검색서비스 → 장기요양기관 찾기"에서 지역을 양산시로, 급여종류를 방문요양으로 선택하면 평가등급까지 확인할 수 있습니다.</div>
       </div>
     </details>
@@ -458,8 +476,8 @@
       <div class="card-body">
         <p>하루 8~10시간 시설에서 인지·신체활동 프로그램, 식사, 투약 관리를 받을 수 있습니다. 보호자가 낮 시간 동안 쉬거나 일할 수 있어 많이 이용합니다.</p>
         <p><span class="label">이용</span>장기요양 재가급여 한도 내에서 이용 (본인부담 발생)</p>
-        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 주간보호센터"><span class="maplogo">N</span>네이버지도에서 찾기</a>
-        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 주간보호센터"><span class="maplogo">K</span>카카오맵에서 찾기</a>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 주간보호센터" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 찾기</a>
+        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 주간보호센터" target="_blank" rel="noopener"><span class="maplogo">K</span>카카오맵에서 찾기</a>
         <div class="tip">💡 매일 돌봐야 하는 부담이 크다면, 재가요양센터(방문형)보다 주간보호센터(시설형)가 보호자 휴식에 더 도움이 될 수 있습니다.</div>
         <span class="verify-note">최종확인: 2026-09</span>
       </div>
@@ -477,8 +495,8 @@
           <tr><td>전동·수동 침대<br>수동휠체어<br>욕창예방매트리스<br>이동욕조</td><td><b>안전손잡이</b><br><b>성인용 보행기</b><br>지팡이<br>미끄럼방지매트<br>이동변기·목욕의자</td></tr>
         </table>
         <p style="margin-top:10px;"><span class="label">신청</span>가까운 "복지용구사업소"에 장기요양 급여확인서를 가지고 방문·계약하면 본인부담금만 내고 이용 가능합니다.</p>
-        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 복지용구사업소"><span class="maplogo">N</span>네이버지도에서 복지용구사업소 찾기</a>
-        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 복지용구사업소"><span class="maplogo">K</span>카카오맵에서 찾기</a>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 복지용구사업소" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 복지용구사업소 찾기</a>
+        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 복지용구사업소" target="_blank" rel="noopener"><span class="maplogo">K</span>카카오맵에서 찾기</a>
         <span class="verify-note">최종확인: 2026-09</span>
       </div>
     </details>
@@ -488,11 +506,25 @@
       <div class="card-body">
         <p>등급이 없으면 원칙적으로 전액 본인부담으로 의료기기상사·복지용구 판매점에서 구입하거나 렌탈업체에서 대여해야 합니다.</p>
         <div class="warn">⚠️ 퇴원이 급한데 아직 등급 판정이 안 나왔다면, 담당 치료사와 상의해 임시로 대여만 먼저 해두고 등급이 나온 뒤 급여로 전환하는 방법도 있습니다.</div>
-        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 의료기기 대여"><span class="maplogo">N</span>네이버지도에서 의료기기 대여점 찾기</a>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 의료기기 대여" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 의료기기 대여점 찾기</a>
       </div>
     </details>
 
     <div class="section-title" id="rehab"><span class="n">⑤</span>가까운 재활 자원</div>
+
+    <details class="card" id="transfer">
+      <summary><span class="summary-title">집이 아니라 <b>요양병원·재활병원</b>으로 옮기신다면<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
+      <div class="card-body">
+        <p>고령이시거나 보호자가 낮 시간 돌봄이 어려우면, 퇴원 후 바로 집보다 요양병원·재활병원으로 옮겨 치료를 이어가는 경우도 많습니다. 이것도 아주 흔한 선택이에요.</p>
+        <p><span class="label">전원 고를 때 확인</span>① 재활의학과 전문의·물리치료사가 상주하는지 ② 장기요양기관이면 평가등급 ③ 가족이 면회 다니기 편한 거리인지</p>
+        <div class="tip">💡 <b>② 지원제도의 장기요양보험·산정특례·본인부담상한제·재난적의료비는 요양병원·재활병원으로 가셔도 똑같이 필요합니다.</b> 특히 장기요양등급은 전원 전에 미리 신청해두는 게 좋습니다.</div>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 재활병원" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 재활병원 찾기</a>
+        <a class="tel-btn kakao" href="https://map.kakao.com/?q=양산시 재활병원" target="_blank" rel="noopener"><span class="maplogo">K</span>카카오맵에서 찾기</a>
+        <a class="tel-btn naver" href="https://map.naver.com/p/search/양산시 요양병원" target="_blank" rel="noopener"><span class="maplogo">N</span>네이버지도에서 요양병원 찾기</a>
+        <p class="verify-note" style="margin-top:10px;">💡 더 자세한 병원별 평가 정보는 "건강보험심사평가원 병원평가정보"를 검색해서 확인하실 수 있습니다.</p>
+        <span class="verify-note">최종확인: 2026-09</span>
+      </div>
+    </details>
 
     <details class="card">
       <summary><span class="summary-title">양산시보건소 <b>지역사회 재활·방문건강관리</b><span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
@@ -560,6 +592,11 @@
     if (!el) return;
     if (history.pushState) { history.pushState(null, '', '#' + id); } else { location.hash = id; }
     openAndScroll(el, true);
+  }
+  function choosePath(path) {
+    document.getElementById('path-home').classList.toggle('selected', path === 'home');
+    document.getElementById('path-transfer').classList.toggle('selected', path === 'transfer');
+    if (path === 'transfer') { goTo('transfer'); }
   }
   window.addEventListener('DOMContentLoaded', function () {
     if (location.hash) {
