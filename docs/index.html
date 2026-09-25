@@ -147,6 +147,10 @@
     color: var(--text);
   }
   details.card > summary::-webkit-details-marker { display:none; }
+  .summary-title { display:flex; flex-wrap:wrap; align-items:center; gap:7px; flex:1; min-width:0; }
+  .badge { display:inline-block; font-size:0.72rem; font-weight:800; padding:3px 9px; border-radius:20px; white-space:nowrap; }
+  .badge.high { background:#fdecea; color:#c0392b; }
+  .badge.low { background:#fff4e0; color:#8a5a00; }
   details.card > summary .arrow { transition: transform .2s; color:var(--primary); font-size:1.2rem; flex-shrink:0; }
   details.card[open] > summary .arrow { transform: rotate(90deg); }
   .card-body { padding: 0 18px 18px; font-size: 0.95rem; color: var(--gray-700); }
@@ -262,7 +266,7 @@
     <div class="section-title" id="transport"><span class="n">①</span>이동수단 — 콜택시·바우처택시</div>
 
     <details class="card" open>
-      <summary>휠체어를 타신다면 <b>교통약자 콜택시</b><span class="arrow">›</span></summary>
+      <summary><span class="summary-title">휠체어를 타신다면 <b>교통약자 콜택시</b><span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>휠체어를 이용하시는 장애인 등 교통약자</p>
         <p><span class="label">운영</span>24시간 이용 가능</p>
@@ -274,7 +278,7 @@
     </details>
 
     <details class="card">
-      <summary>걷기는 하시지만 힘드시다면 <b>바우처택시</b><span class="arrow">›</span></summary>
+      <summary><span class="summary-title">걷기는 하시지만 힘드시다면 <b>바우처택시</b><span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>휠체어는 아니지만 보행이 어려운 교통약자 (양산시 거주)</p>
         <p><span class="label">운영</span>오전 6시 ~ 오후 10시</p>
@@ -288,7 +292,7 @@
     <div class="section-sub">치료진도 다 알지 못하는 제도가 많습니다. 하나씩 눌러서 확인해보세요.</div>
 
     <details class="card">
-      <summary><b>장애인 등록</b> — 모든 지원의 출발점<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>장애인 등록</b> — 모든 지원의 출발점<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>뇌졸중 등으로 마비·기능장애가 남아 있는 경우 (증상이 고정된 후, 보통 발병 6개월~1년 이후 주치의 판단)</p>
         <p><span class="label">신청</span>주소지 읍·면·동 주민센터 방문 (정부24 온라인 신청도 가능)</p>
@@ -298,7 +302,7 @@
     </details>
 
     <details class="card">
-      <summary><b>노인장기요양보험</b> — 65세 미만도 가능<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>노인장기요양보험</b> — 65세 미만도 가능<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>65세 미만이어도 뇌졸중(뇌혈관질환) 등으로 6개월 이상 혼자 일상생활이 어려우면 신청 가능</p>
         <p><span class="label">받을 수 있는 것</span>방문요양·방문목욕, 복지용구(휠체어·침대 등) 대여·구입 지원, 요양시설 이용</p>
@@ -309,7 +313,7 @@
     </details>
 
     <details class="card">
-      <summary><b>가족요양비</b> — 직접 돌봐도 현금 지원<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>가족요양비</b> — 직접 돌봐도 현금 지원<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>장기요양 등급자를 시설·재가서비스 이용이 어려운 특별한 사유(치매 이상행동 등)로 가족이 직접 돌보는 경우</p>
         <p><span class="label">혜택</span>요양보호사 자격이 없어도 월 240,450원(2026년 기준) 현금 지급</p>
@@ -319,7 +323,7 @@
     </details>
 
     <details class="card">
-      <summary><b>재난적의료비 지원</b> — 병원비 절반 돌려받기<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>재난적의료비 지원</b> — 병원비 절반 돌려받기<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>낸 의료비가 가구 연소득의 10%를 넘는 경우 (기준중위소득 100% 이하 원칙, 개별심사 시 200%까지 확대)</p>
         <p><span class="label">혜택</span>본인부담 의료비의 50%를 연간 2천만원(개별심사 시 최대 3천만원)까지 지원</p>
@@ -330,7 +334,7 @@
     </details>
 
     <details class="card">
-      <summary><b>장애인 활동지원서비스</b> — 돌봄 인력 지원<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>장애인 활동지원서비스</b> — 돌봄 인력 지원<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>만 6~64세 등록장애인 (소득과 무관하게 신청 가능)</p>
         <p><span class="label">받을 수 있는 것</span>활동지원사가 집에 방문해 식사·이동·외출을 도와줌</p>
@@ -340,7 +344,7 @@
     </details>
 
     <details class="card">
-      <summary><b>산정특례</b> — 병원비 본인부담 5%로<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>산정특례</b> — 병원비 본인부담 5%로<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>뇌졸중(뇌혈관질환)으로 입원·수술을 받는 경우</p>
         <p><span class="label">혜택</span>입원일(또는 수술·시술일)로부터 최대 30일간 진료비 본인부담률이 5%로 낮아짐</p>
@@ -349,7 +353,7 @@
     </details>
 
     <details class="card">
-      <summary><b>본인부담상한제</b> — 낸 병원비 돌려받기<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>본인부담상한제</b> — 낸 병원비 돌려받기<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">내용</span>1년간 낸 건강보험 본인부담금이 소득분위별 상한액을 넘으면, 넘은 금액을 공단이 돌려줍니다</p>
         <p><span class="label">신청</span>공단이 대상자에게 환급 안내문을 보내줍니다. 안내문 받은 날로부터 3년 이내 신청하면 됩니다</p>
@@ -360,7 +364,7 @@
     </details>
 
     <details class="card">
-      <summary><b>전기요금 할인</b> — 중증장애인 월 최대 2만원<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>전기요금 할인</b> — 중증장애인 월 최대 2만원<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>장애 정도가 심한(중증) 등록장애인</p>
         <p><span class="label">혜택</span>월 최대 16,000원 할인 (여름철 7~8월은 최대 20,000원)</p>
@@ -370,7 +374,7 @@
     </details>
 
     <details class="card">
-      <summary><b>자동차 세금 감면</b> — 취득세·자동차세 면제<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>자동차 세금 감면</b> — 취득세·자동차세 면제<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>장애 정도가 심한(1~3급 수준) 등록장애인 명의 차량 (배우자·직계존비속 공동명의 포함), 배기량 2천cc 이하 승용차 등 1대</p>
         <p><span class="label">혜택</span>취득세·자동차세 면제, LPG 차량 사용 가능</p>
@@ -379,7 +383,7 @@
     </details>
 
     <details class="card">
-      <summary><b>주택 개조 지원</b> — 손잡이·경사로·화장실 개조비<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>주택 개조 지원</b> — 손잡이·경사로·화장실 개조비<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">대상</span>저소득(기준 중위소득 이하) 등록장애인 가구</p>
         <p><span class="label">혜택</span>가구당 최대 약 380만원까지 안전손잡이·경사로 설치, 화장실 개조, 출입문 문턱 제거 등 지원 (지자체·연도별로 한도가 달라질 수 있음)</p>
@@ -389,7 +393,7 @@
     </details>
 
     <details class="card">
-      <summary><b>통신비 할인</b> — 이동전화 요금 감면<span class="arrow">›</span></summary>
+      <summary><span class="summary-title"><b>통신비 할인</b> — 이동전화 요금 감면<span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>등록장애인은 이동통신 3사(SKT·KT·LGU+) 대리점이나 고객센터를 통해 요금 감면을 신청할 수 있습니다. 감면율과 조건은 통신사·요금제마다 다르니 다니시는 통신사 대리점에 장애인등록증을 가지고 문의하세요.</p>
       </div>
@@ -399,7 +403,7 @@
     <div class="section-sub">장기요양 등급을 받으면 계약해서 방문요양·방문목욕·주간보호 서비스를 받을 수 있습니다</div>
 
     <details class="card" open>
-      <summary>재가요양센터, 어떻게 찾나요?<span class="arrow">›</span></summary>
+      <summary><span class="summary-title">재가요양센터, 어떻게 찾나요?<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>집에서 가깝고 평가등급이 좋은 곳을 고르는 게 좋습니다. 계약 전에 장기요양인정서·표준장기요양이용계획서를 준비해 두세요.</p>
         <a class="tel-btn map" href="https://map.naver.com/p/search/양산시 재가요양센터">🗺️ 네이버지도에서 찾기</a>
@@ -410,7 +414,7 @@
     </details>
 
     <details class="card">
-      <summary>낮 동안만 맡기고 싶다면 <b>주간보호센터(데이케어)</b><span class="arrow">›</span></summary>
+      <summary><span class="summary-title">낮 동안만 맡기고 싶다면 <b>주간보호센터(데이케어)</b><span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>하루 8~10시간 시설에서 인지·신체활동 프로그램, 식사, 투약 관리를 받을 수 있습니다. 보호자가 낮 시간 동안 쉬거나 일할 수 있어 많이 이용합니다.</p>
         <p><span class="label">이용</span>장기요양 재가급여 한도 내에서 이용 (본인부담 발생)</p>
@@ -424,7 +428,7 @@
     <div class="section-sub">손잡이, 환자용 침대, 보행보조기구 — 어디서 구하나요?</div>
 
     <details class="card" open>
-      <summary>장기요양 등급이 있다면 <b>복지용구 급여</b>로<span class="arrow">›</span></summary>
+      <summary><span class="summary-title">장기요양 등급이 있다면 <b>복지용구 급여</b>로<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">한도</span>연간 160만원까지 (공단부담금+본인부담금 합산), 본인부담은 일반 15% / 감경대상 6~9% / 기초수급자 0%</p>
         <table class="compare">
@@ -438,7 +442,7 @@
     </details>
 
     <details class="card">
-      <summary>장기요양 등급이 없다면?<span class="arrow">›</span></summary>
+      <summary><span class="summary-title">장기요양 등급이 없다면?<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>등급이 없으면 원칙적으로 전액 본인부담으로 의료기기상사·복지용구 판매점에서 구입하거나 렌탈업체에서 대여해야 합니다.</p>
         <div class="warn">⚠️ 퇴원이 급한데 아직 등급 판정이 안 나왔다면, 담당 치료사와 상의해 임시로 대여만 먼저 해두고 등급이 나온 뒤 급여로 전환하는 방법도 있습니다.</div>
@@ -449,7 +453,7 @@
     <div class="section-title" id="rehab"><span class="n">⑤</span>가까운 재활 자원</div>
 
     <details class="card">
-      <summary>양산시보건소 <b>지역사회 재활·방문건강관리</b><span class="arrow">›</span></summary>
+      <summary><span class="summary-title">양산시보건소 <b>지역사회 재활·방문건강관리</b><span class="badge low">🟡 퇴원 후 챙기면 됨</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p><span class="label">위치</span>경남 양산시 삽량로 169 (중부동)</p>
         <p><span class="label">내용</span>방문건강관리, 지역사회중심재활사업 등 — 대상·절차는 보건소에 문의</p>
@@ -460,7 +464,7 @@
     <div class="section-title" id="checklist"><span class="n">⑥</span>퇴원 전 집 점검 체크리스트</div>
 
     <details class="card">
-      <summary>낙상 없는 집 만들기<span class="arrow">›</span></summary>
+      <summary><span class="summary-title">낙상 없는 집 만들기<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
       <div class="card-body">
         <p>☐ 방·화장실 문턱 없애거나 경사로 설치</p>
         <p>☐ 화장실·욕실에 안전손잡이 설치</p>
