@@ -182,8 +182,8 @@
     color: var(--text);
   }
   details.card > summary::-webkit-details-marker { display:none; }
-  .summary-title { display:flex; flex-wrap:wrap; align-items:center; gap:7px; flex:1; min-width:0; }
-  .badge { display:inline-block; font-size:0.72rem; font-weight:800; padding:3px 9px; border-radius:20px; white-space:nowrap; }
+  .summary-title { display:flex; flex-wrap:wrap; align-items:center; gap:5px 7px; flex:1; min-width:0; }
+  .badge { display:inline-block; flex-basis:100%; font-size:0.72rem; font-weight:800; padding:3px 9px; border-radius:20px; white-space:nowrap; width:fit-content; }
   .badge.high { background:#fdecea; color:#c0392b; }
   .badge.low { background:#fff4e0; color:#8a5a00; }
   details.card > summary .arrow { transition: transform .2s; color:var(--primary); font-size:1.2rem; flex-shrink:0; }
@@ -196,10 +196,13 @@
 
   .tel-btn {
     display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:8px;
+    gap:1px;
     min-height:48px;
+    padding: 8px 12px;
+    text-align:center;
     background: linear-gradient(135deg, var(--primary), var(--primary-light));
     box-shadow: 0 4px 12px rgba(194,74,31,0.28);
     color: white;
@@ -210,6 +213,8 @@
     margin-top: 8px;
     transition: transform .12s ease;
   }
+  .tel-btn .num { display:block; font-size:1.08rem; font-weight:800; letter-spacing:0.3px; }
+  .tel-btn .lbl { display:block; font-size:0.88rem; font-weight:600; opacity:0.95; }
   .tel-btn.secondary { background: linear-gradient(135deg, var(--accent), var(--accent-light)); color:#4a2f08; box-shadow: 0 4px 12px rgba(240,169,60,0.35); }
   .tel-btn.map { background: linear-gradient(135deg, var(--mint), #17c9be); box-shadow: 0 4px 12px rgba(14,165,160,0.3); }
   .tel-btn:active { transform: scale(0.97); }
@@ -295,9 +300,9 @@
     <details class="card">
       <summary>응급은 아니지만 상담이 필요할 때<span class="arrow">›</span></summary>
       <div class="card-body">
-        <a class="tel-btn secondary" href="tel:129">📞 보건복지 상담센터 129 (모든 복지제도 안내)</a>
-        <a class="tel-btn secondary" href="tel:055-392-5102">📞 양산시보건소 055-392-5102</a>
-        <a class="tel-btn secondary" href="tel:055-392-2114">📞 양산시청 대표전화 055-392-2114</a>
+        <a class="tel-btn secondary" href="tel:129"><span class="lbl">📞 보건복지 상담센터 (모든 복지제도 안내)</span><span class="num">129</span></a>
+        <a class="tel-btn secondary" href="tel:055-392-5102"><span class="lbl">📞 양산시보건소</span><span class="num">055-392-5102</span></a>
+        <a class="tel-btn secondary" href="tel:055-392-2114"><span class="lbl">📞 양산시청 대표전화</span><span class="num">055-392-2114</span></a>
       </div>
     </details>
 
@@ -310,8 +315,8 @@
         <p><span class="label">운영</span>24시간 이용 가능</p>
         <p><span class="label">요금</span>양산시 관내 1회 2,000원</p>
         <p><span class="label">신청</span>전화로 미리 예약하시면 차량이 집 앞까지 옵니다.</p>
-        <a class="tel-btn" href="tel:055-381-9663">📞 양산시교통약자이동지원센터 055-381-9663</a>
-        <a class="tel-btn secondary" href="tel:1566-4488">📞 경남광역이동지원센터 1566-4488</a>
+        <a class="tel-btn" href="tel:055-381-9663"><span class="lbl">📞 양산시교통약자이동지원센터</span><span class="num">055-381-9663</span></a>
+        <a class="tel-btn secondary" href="tel:1566-4488"><span class="lbl">📞 경남광역이동지원센터</span><span class="num">1566-4488</span></a>
       </div>
     </details>
 
@@ -321,13 +326,13 @@
         <p><span class="label">대상</span>휠체어는 아니지만 보행이 어려운 교통약자 (양산시 거주)</p>
         <p><span class="label">운영</span>오전 6시 ~ 오후 10시</p>
         <p><span class="label">요금</span>1회 2,000원 수준 (일반택시 요금 일부 지원 방식)</p>
-        <a class="tel-btn" href="tel:055-381-9663">📞 신청·문의 055-381-9663</a>
+        <a class="tel-btn" href="tel:055-381-9663"><span class="lbl">📞 신청·문의</span><span class="num">055-381-9663</span></a>
         <div class="tip">💡 병원 진료·재활치료 갈 때도 이용하실 수 있습니다. 예약은 하루 전에 하시는 게 안전합니다.</div>
       </div>
     </details>
 
     <div class="section-title" id="benefits"><span class="n">②</span>몰라서 못 받는 지원제도</div>
-    <div class="section-sub">치료진도 다 알지 못하는 제도가 많습니다. 하나씩 눌러서 확인해보세요.</div>
+    <div class="section-sub">사회복지사도 다 알기 어려운 제도가 많습니다. 하나씩 눌러서 확인해보세요.</div>
 
     <details class="card">
       <summary><span class="summary-title"><b>장애인 등록</b> — 모든 지원의 출발점<span class="badge high">🔴 퇴원 전 필수</span></span><span class="arrow">›</span></summary>
@@ -345,7 +350,7 @@
         <p><span class="label">대상</span>65세 미만이어도 뇌졸중(뇌혈관질환) 등으로 6개월 이상 혼자 일상생활이 어려우면 신청 가능</p>
         <p><span class="label">받을 수 있는 것</span>방문요양·방문목욕, 복지용구(휠체어·침대 등) 대여·구입 지원, 요양시설 이용</p>
         <p><span class="label">신청</span>65세 미만은 인터넷 최초신청 불가 — 공단 지사 방문·우편·팩스로 신청 (진단서 첨부)</p>
-        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <a class="tel-btn" href="tel:1577-1000"><span class="lbl">📞 국민건강보험공단</span><span class="num">1577-1000</span></a>
         <div class="tip">💡 등급을 받으면 ③ 재가요양센터 찾기, ④ 장비 준비하기 섹션에서 바로 활용하실 수 있습니다.</div>
       </div>
     </details>
@@ -356,7 +361,7 @@
         <p><span class="label">대상</span>장기요양 등급자를 시설·재가서비스 이용이 어려운 특별한 사유(치매 이상행동 등)로 가족이 직접 돌보는 경우</p>
         <p><span class="label">혜택</span>요양보호사 자격이 없어도 월 240,450원(2026년 기준) 현금 지급</p>
         <p><span class="label">신청</span>국민건강보험공단에 문의 — 담당자 방문조사 후 결정</p>
-        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <a class="tel-btn" href="tel:1577-1000"><span class="lbl">📞 국민건강보험공단</span><span class="num">1577-1000</span></a>
       </div>
     </details>
 
@@ -366,7 +371,7 @@
         <p><span class="label">대상</span>낸 의료비가 가구 연소득의 10%를 넘는 경우 (기준중위소득 100% 이하 원칙, 개별심사 시 200%까지 확대)</p>
         <p><span class="label">혜택</span>본인부담 의료비의 50%를 연간 2천만원(개별심사 시 최대 3천만원)까지 지원</p>
         <p><span class="label">신청</span>퇴원 후 180일 이내 국민건강보험공단 지사 방문 (부득이한 경우 우편·팩스)</p>
-        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <a class="tel-btn" href="tel:1577-1000"><span class="lbl">📞 국민건강보험공단</span><span class="num">1577-1000</span></a>
         <div class="tip">💡 입원비가 많이 나왔다면 본인부담상한제와 같이 꼭 확인해보세요. 둘 다 모르고 못 받는 분이 많습니다.</div>
       </div>
     </details>
@@ -377,7 +382,7 @@
         <p><span class="label">대상</span>만 6~64세 등록장애인 (소득과 무관하게 신청 가능)</p>
         <p><span class="label">받을 수 있는 것</span>활동지원사가 집에 방문해 식사·이동·외출을 도와줌</p>
         <p><span class="label">신청</span>읍·면·동 주민센터 접수 → 국민연금공단 방문조사 → 등급 결정</p>
-        <a class="tel-btn" href="tel:1355">📞 국민연금공단 1355</a>
+        <a class="tel-btn" href="tel:1355"><span class="lbl">📞 국민연금공단</span><span class="num">1355</span></a>
       </div>
     </details>
 
@@ -396,7 +401,7 @@
         <p><span class="label">내용</span>1년간 낸 건강보험 본인부담금이 소득분위별 상한액을 넘으면, 넘은 금액을 공단이 돌려줍니다</p>
         <p><span class="label">신청</span>공단이 대상자에게 환급 안내문을 보내줍니다. 안내문 받은 날로부터 3년 이내 신청하면 됩니다</p>
         <p><span class="label">확인 방법</span>국민건강보험공단 홈페이지·The건강보험 앱에서 조회 가능</p>
-        <a class="tel-btn" href="tel:1577-1000">📞 국민건강보험공단 1577-1000</a>
+        <a class="tel-btn" href="tel:1577-1000"><span class="lbl">📞 국민건강보험공단</span><span class="num">1577-1000</span></a>
         <div class="tip">💡 장기간 입원·재활치료를 받으셨다면 꼭 확인해보세요. 모르고 안 받는 분이 많습니다.</div>
       </div>
     </details>
@@ -426,7 +431,7 @@
         <p><span class="label">대상</span>저소득(기준 중위소득 이하) 등록장애인 가구</p>
         <p><span class="label">혜택</span>가구당 최대 약 380만원까지 안전손잡이·경사로 설치, 화장실 개조, 출입문 문턱 제거 등 지원 (지자체·연도별로 한도가 달라질 수 있음)</p>
         <p><span class="label">신청</span>양산시청 노인장애인과에 대상 여부 문의</p>
-        <a class="tel-btn" href="tel:055-392-2522">📞 양산시청 노인장애인과 055-392-2522</a>
+        <a class="tel-btn" href="tel:055-392-2522"><span class="lbl">📞 양산시청 노인장애인과</span><span class="num">055-392-2522</span></a>
       </div>
     </details>
 
@@ -495,7 +500,7 @@
       <div class="card-body">
         <p><span class="label">위치</span>경남 양산시 삽량로 169 (중부동)</p>
         <p><span class="label">내용</span>방문건강관리, 지역사회중심재활사업 등 — 대상·절차는 보건소에 문의</p>
-        <a class="tel-btn" href="tel:055-392-5102">📞 양산시보건소 055-392-5102</a>
+        <a class="tel-btn" href="tel:055-392-5102"><span class="lbl">📞 양산시보건소</span><span class="num">055-392-5102</span></a>
       </div>
     </details>
 
